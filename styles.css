@@ -1,0 +1,50 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+@font-face {
+	font-family: "helsinki";
+	src: url(Helsinki.ttf);
+}
+
+img {
+	position: relative;
+	width: 600px;
+	height: 100vh;
+}
+span {
+	position: absolute;
+	bottom: 800px;
+
+	color: white;
+	padding-left: 600px;
+	padding-top: 200px;
+	font-size: 4rem;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+span::before {
+	font-family: helsinki;
+	content: "Odin";
+
+	bottom: 90px;
+	right: 180px;
+	position: absolute;
+}
+span::after {
+	font-family: helsinki;
+	content: "Homes";
+
+	bottom: 30px;
+	right: 120px;
+	position: absolute;
+}
+.material-symbols-outlined::before {
+	position: absolute;
+	bottom: 820px;
+	left: 110px;
+	font-size: 10rem;
+	content: "home";
+	color: white;
+	font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}

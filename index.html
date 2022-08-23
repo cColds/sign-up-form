@@ -2,40 +2,64 @@
 <html lang="en">
 
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Cold's Signup Form</title>
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="styles.css" />
         <link rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-
-
     </head>
 
     <body>
         <div class="container">
+            <div class="imgContainer">
+                <span class="odin">Odin<br>Homes</span>
+                <!-- <span class="homes">Homes</span> -->
 
-            <div class="heroImg">
-                <img src="home.png" alt="home">
-                <div class="bgColor">
-                    <span></span>
-
-                    <div class="material-symbols-outlined">
-                    </div>
-                </div>
+                <div class="material-symbols-outlined"></div>
             </div>
-            <div class="signup-container">
+            <div class="signup-description-container">
                 <div class="form-description">This is not a real online service! You know you need something like this
                     in your life to help you
-                    realize your deepest dreams. Sign up now to get started.
+                    realize your deepest dreams.
+                    <p>Sign up <em>now</em> to get started.</p>
+                    <br>
                     <p>You <em>know</em> you want to.</p>
                 </div>
+                <div class="signup-form">
 
+                    <div class="signup-cheer">Let's do this!</div>
+
+                    <form>
+                        <div class="firstName">
+                            <label for="fname">FIRST NAME</label>
+                            <input type="text" id="fname">
+                        </div>
+                        <div class="lastName">
+                            <label for="lname">LAST NAME</label>
+                            <input type="text" id="lname">
+                        </div>
+                        <div class="emailAddress">
+                            <label for="email">EMAIL</label>
+                            <input type="email" id="email">
+                        </div>
+                        <div class="phoneNumber">
+                            <label for="phone-number">PHONE NUMBER</label>
+                            <input type="tel" id="phone-number">
+                        </div>
+                        <div class="password">
+                            <label for="password">PASSWORD</label>
+                            <input type="password" id="password">
+                        </div>
+                        <div class="confirmPassword">
+                            <label for="confirm-password">CONFIRM PASSWORD</label>
+                            <input type="password" id="confirm-password">
+                        </div>
+                    </form>
+                </div>
 
             </div>
-        </div>
-        </div>
     </body>
 
 </html>

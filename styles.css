@@ -20,7 +20,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin-top: 200px;
+	margin-top: 100px;
 	margin-left: 60px;
 	margin-right: 100px;
 	flex-wrap: wrap;
@@ -35,12 +35,12 @@ p {
 }
 .imgContainer {
 	background-image: url("home.png");
-	height: 100vh;
+	min-height: 100vh;
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: 100% 100%;
-	width: 40%;
-
+	background-size: cover;
+	min-width: max(40%, 250px);
+	margin-bottom: -300px;
 	position: relative;
 }
 
@@ -53,9 +53,9 @@ p {
 	width: 100%;
 	display: flex;
 	justify-content: center;
-	position: absolute;
-	align-items: center;
-	margin-bottom: 340px;
+	position: sticky;
+
+	top: 205px;
 }
 
 .signup-form {
@@ -67,7 +67,7 @@ p {
 }
 
 .signup-cheer {
-	font-size: 2rem;
+	font-size: 1.6rem;
 	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
 		Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
 		sans-serif;
@@ -76,7 +76,7 @@ p {
 	margin-bottom: 35px;
 }
 input {
-	width: 320px;
+	width: 300px;
 	height: 40px;
 	margin-left: 60px;
 	margin-bottom: 30px;
@@ -86,10 +86,17 @@ input {
 	border-color: #e5e7eb;
 }
 
+.lastName,
+.phoneNumber,
+.confirmPassword {
+	margin-right: 30px;
+}
+
 label {
 	margin-left: 60px;
 	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 	letter-spacing: 2px;
+	font-size: 0.95rem;
 }
 
 .nameContainer,

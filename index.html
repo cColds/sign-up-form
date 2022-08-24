@@ -14,15 +14,18 @@
     <body>
         <div class="container">
             <div class="imgContainer">
-                <span class="odin">Odin<br>Homes</span>
-                <!-- <span class="homes">Homes</span> -->
+                <span class="odin">
 
-                <div class="material-symbols-outlined"></div>
+
+                    <div class="material-symbols-outlined"></div>
+                    Odin<br>Homes
+                </span>
             </div>
             <div class="signup-description-container">
-                <div class="form-description">This is not a real online service! You know you need something like this
-                    in your life to help you
-                    realize your deepest dreams.
+                <div class="form-description">Odin Homes allows you to view nice houses to buy, sell, or rent a house
+                    from the comfort
+                    of your home!
+
                     <p>Sign up <em>now</em> to get started.</p>
                     <br>
                     <p>You <em>know</em> you want to.</p>
@@ -30,12 +33,12 @@
                 <div class="signup-form">
 
                     <div class="signup-cheer">Let's do this!</div>
-
+                    <p class="note">NOTE: Form fields with (*) are mandatory</p>
                     <form>
                         <div class="nameContainer">
                             <div class="firstName">
-                                <p><label for="fname">FIRST NAME</label></p>
-                                <input type="text" id="fname">
+                                <p><label for="fname">FIRST NAME<span class="asterisk">*</span></label></p>
+                                <input type="text" id="fname" required>
                             </div>
                             <div class="lastName">
                                 <p><label for="lname">LAST NAME</label></p>
@@ -44,7 +47,7 @@
                         </div>
                         <div class="contactContainer">
                             <div class="emailAddress">
-                                <p> <label for="email">EMAIL</label></p>
+                                <p> <label for="email">EMAIL<span class="asterisk" required>*</span></label></p>
                                 <input type="email" id="email">
                             </div>
                             <div class="phoneNumber">
@@ -54,12 +57,13 @@
                         </div>
                         <div class="passwordContainer">
                             <div class="password">
-                                <p> <label for="password">PASSWORD</label></p>
-                                <input type="password" id="password">
+                                <p> <label for="password">PASSWORD<span class="asterisk">*</span></label></p>
+                                <input type="password" id="password" required>
                             </div>
                             <div class="confirmPassword">
-                                <p> <label for="confirm-password">CONFIRM PASSWORD</label></p>
-                                <input type="password" id="confirm-password">
+                                <p> <label for="confirm-password">CONFIRM PASSWORD<span class="asterisk">*</span>
+                                    </label></p>
+                                <input type="password" id="confirm-password" required>
                             </div>
                         </div>
                         <div class="account">

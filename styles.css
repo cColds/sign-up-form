@@ -149,6 +149,7 @@ a:active {
 .asterisk {
 	color: #596d48;
 	font-size: 1.5rem;
+	font-weight: bold;
 }
 .material-symbols-outlined::before {
 	position: sticky;

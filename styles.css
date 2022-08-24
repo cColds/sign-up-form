@@ -163,11 +163,14 @@ a:active {
 .passwordRequirements,
 .confirmPasswordRequirements {
 	margin-left: 60px;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	margin-top: 10px;
 	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-.passwordRequirements > div:nth-child(-n + 4)::first-letter,
-.confirmPasswordRequirements > :nth-child(-n + 4)::first-letter {
+.passwordRequirements > div:nth-child(-n + 4)::first-letter {
 	color: red;
 }
 
@@ -181,4 +184,29 @@ a:active {
 	position: absolute;
 	bottom: 10px;
 	margin-left: 60px;
+}
+
+input:invalid {
+	border-style: solid;
+	border-color: red;
+}
+
+.showPassContainer {
+	display: flex;
+	position: relative;
+	white-space: nowrap;
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.showPassText {
+	position: absolute;
+	right: 160px;
+	bottom: 1px;
+}
+
+.checkBox {
+	position: absolute;
+	right: 280px;
+	width: 20px;
+	bottom: -40px;
 }

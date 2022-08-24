@@ -79,3 +79,16 @@ function includesSpecialCharacters(password) {
 
 	return specialCharactersCheck;
 }
+
+const checkbox = document.querySelector(".checkBox");
+checkbox.addEventListener("click", showPassword);
+
+function showPassword() {
+	if (password.type === "password") {
+		password.type = "text";
+		confirmPassword.type = "text";
+	} else {
+		password.type = "password";
+		confirmPassword.type = "password";
+	}
+}

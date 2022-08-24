@@ -60,7 +60,12 @@
                         <div class="passwordContainer">
                             <div class="password">
                                 <p> <label for="password">PASSWORD<span class="asterisk">*</span></label></p>
-                                <input type="password" id="passwordId" required>
+                                <input type="password" id="passwordId"
+                                    pattern="/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{6,}$/" required>
+                                <div class="showPassContainer">
+                                    <input type="checkbox" class="checkBox">
+                                    <span class="showPassText">Show Password </span>
+                                </div>
                                 <div class="passwordRequirements">
                                     <div>✖Minimum 6 characters</div>
                                     <div>✖At least one digit</div>
@@ -73,16 +78,12 @@
                                     </label></p>
                                 <div class="confirmPasswordContainer">
                                     <input type="password" id="confirm-password"
+                                        pattern="/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,32}$/"
                                         title="At least 6 characters, a digit, an uppercase letter, and a special character"
                                         required>
                                     <div class="mismatch"></div>
                                 </div>
-                                <!-- <div class="confirmPasswordRequirements">
-                                    <div class="min">✖Minimum 6 characters</div>
-                                    <div class="digit">✖At least one digit</div>
-                                    <div class="upperCase">✖At least one uppercase letter</div>
-                                    <div class="special">✖At least one special character </div>
-                                </div> -->
+
                             </div>
                         </div>
                         <div class="account">

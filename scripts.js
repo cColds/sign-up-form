@@ -11,16 +11,10 @@ function checkPassword() {
 }
 
 function isPasswordValid(password, confirmPassword) {
-	const upperCase = /[A-Z]/g;
-	const upperCaseCheck = password.toString().match(upperCase);
-	const digits = /[0-9]/g;
-	const digitsCheck = password.toString().match(digits);
-	const specialCharacters = /[-!$%^&*()_+|~=`{}\[\]:\/;<>?,.@#]/;
-	const specialCharactersCheck = password.toString().match(specialCharacters);
 	if (password === confirmPassword) {
-		if (upperCaseCheck) {
-			if (digitsCheck) {
-				if (specialCharactersCheck) {
+		if (isUpperCase(password)) {
+			if (includesDigits(password)) {
+				if (includesSpecialCharacters(password)) {
 					if (password.length >= 8 && password.length <= 32) {
 						console.log("hello123");
 
@@ -34,3 +28,22 @@ function isPasswordValid(password, confirmPassword) {
 
 password.addEventListener("keyup", checkPassword);
 confirmPassword.addEventListener("keyup", checkPassword);
+
+function isUpperCase(password) {
+	const upperCase = /[A-Z]/g;
+	const upperCaseCheck = password.toString().match(upperCase);
+	return upperCaseCheck;
+}
+
+function includesDigits(password) {
+	const digits = /[0-9]/g;
+	const digitsCheck = password.toString().match(digits);
+	return digitsCheck;
+}
+
+function includesSpecialCharacters(password) {
+	const specialCharacters = /[-!$%^&*()_+|~=`{}\[\]:\/;<>?,.@#]/;
+	const specialCharactersCheck = password.toString().match(specialCharacters);
+
+	return specialCharactersCheck;
+}

@@ -43,7 +43,7 @@
                                 <input type="text" id="fname" required>
                             </div>
                             <div class="lastName">
-                                <p><label for="lname">LAST NAME</label></p>
+                                <p><label for="lname">LAST NAME<span class="asterisk"></span></label></p>
                                 <input type="text" id="lname">
                             </div>
                         </div>
@@ -53,7 +53,7 @@
                                 <input type="email" id="email">
                             </div>
                             <div class="phoneNumber">
-                                <p> <label for="phone-number">PHONE NUMBER</label></p>
+                                <p> <label for="phone-number">PHONE NUMBER<span class="asterisk"></span></label></p>
                                 <input type="tel" id="phone-number">
                             </div>
                         </div>
@@ -62,14 +62,29 @@
                                 <p> <label for="password">PASSWORD<span class="asterisk">*</span></label></p>
                                 <input type="password" id="passwordId" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
                                     required>
+                                <div class="passwordRequirements">
+                                    <div>✖Minimum 6 characters</div>
+                                    <div>✖At least one digit</div>
+                                    <div>✖At least one uppercase letter</div>
+                                    <div>✖At least one special character </div>
+                                </div>
                             </div>
                             <div class="confirmPassword">
                                 <p> <label for="confirm-password">CONFIRM PASSWORD<span class="asterisk">*</span>
                                     </label></p>
-                                <input type="password" id="confirm-password"
-                                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
-                                    title="At least 6 characters, a digit, an uppercase letter, and a special character"
-                                    required>
+                                <div class="confirmPasswordContainer">
+                                    <input type="password" id="confirm-password"
+                                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+                                        title="At least 6 characters, a digit, an uppercase letter, and a special character"
+                                        required>
+                                    <div class="mismatch"></div>
+                                </div>
+                                <div class="confirmPasswordRequirements">
+                                    <div>✖Minimum 6 characters</div>
+                                    <div>✖At least one digit</div>
+                                    <div>✖At least one uppercase letter</div>
+                                    <div>✖At least one special character </div>
+                                </div>
                             </div>
                         </div>
                         <div class="account">

@@ -63,7 +63,7 @@ p {
 	box-shadow: 0px 1px 5px black;
 	background-color: white;
 	width: auto;
-	height: 410px;
+	height: 500px;
 }
 
 .signup-cheer {
@@ -159,6 +159,25 @@ a:active {
 	font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
 }
 
-/* input:invalid {
-	background-color: red;
-} */
+.passwordRequirements,
+.confirmPasswordRequirements {
+	margin-left: 60px;
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.passwordRequirements > div:nth-child(-n + 4)::first-letter,
+.confirmPasswordRequirements > :nth-child(-n + 4)::first-letter {
+	color: red;
+}
+
+.confirmPasswordContainer {
+	position: relative;
+	color: red;
+}
+
+.mismatch {
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+	position: absolute;
+	bottom: 10px;
+	margin-left: 60px;
+}

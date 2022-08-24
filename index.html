@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="styles.css" />
         <link rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        <script src="scripts.js" defer></script>
     </head>
 
     <body>
@@ -22,7 +23,8 @@
                 </span>
             </div>
             <div class="signup-description-container">
-                <div class="form-description">Odin Homes allows you to view nice houses to buy, sell, or rent a house
+                <div class="form-description">Odin Homes allows you to view nice houses to buy, rent, or even sell your
+                    house
                     from the comfort
                     of your home!
 
@@ -58,12 +60,16 @@
                         <div class="passwordContainer">
                             <div class="password">
                                 <p> <label for="password">PASSWORD<span class="asterisk">*</span></label></p>
-                                <input type="password" id="password" required>
+                                <input type="password" id="passwordId" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+                                    required>
                             </div>
                             <div class="confirmPassword">
                                 <p> <label for="confirm-password">CONFIRM PASSWORD<span class="asterisk">*</span>
                                     </label></p>
-                                <input type="password" id="confirm-password" required>
+                                <input type="password" id="confirm-password"
+                                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+                                    title="At least 6 characters, a digit, an uppercase letter, and a special character"
+                                    required>
                             </div>
                         </div>
                         <div class="account">

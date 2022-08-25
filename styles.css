@@ -186,13 +186,15 @@ a:active {
 	display: flex;
 	position: relative;
 	white-space: nowrap;
+	left: 20px;
+	bottom: 20px;
+	margin-left: 8px;
 	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-.showPassText {
-	position: absolute;
-	right: 160px;
-	bottom: 1px;
+#show {
+	right: 300px;
+	bottom: -40px;
 }
 
 .checkBox {

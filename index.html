@@ -40,7 +40,7 @@
                         <div class="nameContainer">
                             <div class="firstName">
                                 <p><label for="fname">FIRST NAME<span class="asterisk">*</span></label></p>
-                                <input type="text" id="fname" required>
+                                <input type="text" id="fname" placeholder=" " required>
                             </div>
                             <div class="lastName">
                                 <p><label for="lname">LAST NAME<span class="asterisk"></span></label></p>
@@ -49,8 +49,8 @@
                         </div>
                         <div class="contactContainer">
                             <div class="emailAddress">
-                                <p> <label for="email">EMAIL<span class="asterisk" required>*</span></label></p>
-                                <input type="email" id="email">
+                                <p> <label for="email">EMAIL<span class="asterisk">*</span></label></p>
+                                <input type="email" id="email" placeholder=" " required>
                             </div>
                             <div class="phoneNumber">
                                 <p> <label for="phone-number">PHONE NUMBER<span class="asterisk"></span></label></p>
@@ -60,17 +60,17 @@
                         <div class="passwordContainer">
                             <div class="password">
                                 <p> <label for="password">PASSWORD<span class="asterisk">*</span></label></p>
-                                <input type="password" id="passwordId"
-                                    pattern="/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{6,}$/" required>
+                                <input type="password" id="passwordId" placeholder=" "
+                                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" required>
                                 <div class="showPassContainer">
                                     <input type="checkbox" class="checkBox">
                                     <span class="showPassText">Show Password </span>
                                 </div>
                                 <div class="passwordRequirements">
-                                    <div>✖Minimum 6 characters</div>
-                                    <div>✖At least one digit</div>
-                                    <div>✖At least one uppercase letter</div>
-                                    <div>✖At least one special character </div>
+                                    <div class="min">✖Minimum 6 characters</div>
+                                    <div class="digit">✖At least one digit</div>
+                                    <div class="upperCase">✖At least one uppercase letter</div>
+                                    <div class="special">✖At least one special character </div>
                                 </div>
                             </div>
                             <div class="confirmPassword">
@@ -78,9 +78,9 @@
                                     </label></p>
                                 <div class="confirmPasswordContainer">
                                     <input type="password" id="confirm-password"
-                                        pattern="/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,32}$/"
+                                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
                                         title="At least 6 characters, a digit, an uppercase letter, and a special character"
-                                        required>
+                                        placeholder=" " required>
                                     <div class="mismatch"></div>
                                 </div>
 

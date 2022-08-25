@@ -1,11 +1,7 @@
 const password = document.querySelector("#passwordId");
 const confirmPassword = document.querySelector("#confirm-password");
 const submitButton = document.querySelector(".createAccount");
-const minimumCharInfo = document.querySelector(".min");
-const digitsInfo = document.querySelector(".digits");
-const upperCaseInfo = document.querySelector(".upperCase");
-const specialCharInfo = document.querySelector(".special");
-const incorrectPassword = document.querySelector(".mismatch");
+
 function checkPassword() {
 	const passwordResult = password.value;
 	const confirmPasswordResult = confirmPassword.value;
@@ -15,22 +11,22 @@ function checkPassword() {
 }
 
 function isPasswordValid(password, confirmPassword) {
-	if (password !== confirmPassword)
+	if (password !== confirmPassword) {
 		passwordMismatch(password, confirmPassword);
-
-	if (password === confirmPassword) {
+	} else if (password === confirmPassword) {
 		incorrectPassword.textContent = "";
-		if (isUpperCase(password)) {
-			if (includesDigits(password)) {
-				if (includesSpecialCharacters(password)) {
-					if (password.length >= 6 && password.length <= 32) {
-						console.log("hello123");
-
-						return;
-					}
-				}
-			}
-		}
+	}
+	if (password.length >= 6 && password.length <= 32) {
+		isRequirementValid(minimumCharInfo.textContent, password.length);
+	}
+	if (includesDigits(password)) {
+		isRequirementValid(digitsInfo.textContent);
+	}
+	if (isUpperCase(password)) {
+		isRequirementValid(upperCaseInfo.textContent);
+	}
+	if (includesSpecialCharacters(password)) {
+		isRequirementValid(specialCharInfo.textContent);
 	}
 }
 
@@ -40,44 +36,60 @@ confirmPassword.addEventListener("keyup", checkPassword);
 function passwordMismatch(password, confirmPassword) {
 	if (password.length < 1 && confirmPassword.length < 1) {
 		incorrectPassword.textContent = "";
-		// error(password, confirmPassword);
-		return;
+	} else {
+		incorrectPassword.textContent = "*Passwords do not match";
 	}
-	// error(password, confirmPassword);
-	incorrectPassword.textContent = "*Passwords do not match";
-	return;
 }
-
-// function error(password, confirmPassword) {
-// 	password.setAttribute("style", "border-style: solid; border-color: red;");
-
-// 	confirmPassword.setAttribute(
-// 		"style",
-// 		"border-style: solid; border-color: red;"
-// 	);
-// }
-
-function isUpperCase(password) {
-	const upperCase = /[A-Z]/g;
-	const upperCaseCheck = password.toString().match(upperCase);
-	return upperCaseCheck;
+const minimumCharInfo = document.querySelector(".min");
+const specialCharInfo = document.querySelector(".special");
+const upperCaseInfo = document.querySelector(".upperCase");
+const digitsInfo = document.querySelector(".digit");
+const incorrectPassword = document.querySelector(".mismatch");
+function isRequirementValid(info, passwordValue) {
+	const replaceX = info.replace("✖", "✓");
+	if (passwordValue >= 6 && passwordValue <= 32)
+		minimumCharInfo.textContent = replaceX;
+	if (info.includes("digit")) digitsInfo.textContent = replaceX;
+	if (info.includes("uppercase")) upperCaseInfo.textContent = replaceX;
+	if (info.includes("special")) specialCharInfo.textContent = replaceX;
 }
-
-// function invalidUpperCase(password) {
-
-// }
 
 function includesDigits(password) {
 	const digits = /[0-9]/g;
-	const digitsCheck = password.toString().match(digits);
-	return digitsCheck;
+	const digitsCheck = password.match(digits);
+	if (digitsCheck) {
+		if (digitsCheck.length >= 1) {
+			return true;
+		}
+	}
+	return false;
+}
+
+function isUpperCase(password) {
+	const upperCase = /[A-Z]/g;
+	const upperCaseCheck = password.match(upperCase);
+	if (upperCaseCheck) {
+		if (upperCaseCheck.length >= 1) {
+			return true;
+		}
+	}
+	return false;
+}
+
+function invalidUpperCase(password) {
+	console.log(password.textContent);
 }
 
 function includesSpecialCharacters(password) {
 	const specialCharacters = /[-!$%^&*()_+|~=`{}\[\]:\/;<>?,.@#]/;
-	const specialCharactersCheck = password.toString().match(specialCharacters);
+	const specialCharactersCheck = password.match(specialCharacters);
 
-	return specialCharactersCheck;
+	if (specialCharactersCheck) {
+		if (specialCharactersCheck.length >= 1) {
+			return true;
+		}
+	}
+	return false;
 }
 
 const checkbox = document.querySelector(".checkBox");
@@ -92,3 +104,11 @@ function showPassword() {
 		confirmPassword.type = "password";
 	}
 }
+// function error(password, confirmPassword) {
+// 	password.setAttribute("style", "border-style: solid; border-color: red;");
+
+// 	confirmPassword.setAttribute(
+// 		"style",
+// 		"border-style: solid; border-color: red;"
+// 	);
+// }

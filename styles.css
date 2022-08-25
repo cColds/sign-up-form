@@ -186,10 +186,10 @@ a:active {
 	margin-left: 60px;
 }
 
-input:invalid {
+/* input:invalid {
 	border-style: solid;
 	border-color: red;
-}
+} */
 
 .showPassContainer {
 	display: flex;

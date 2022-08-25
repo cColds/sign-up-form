@@ -157,20 +157,68 @@ function showPassword() {
 const firstNameInput = document.querySelector("#fname");
 const firstSymbol = document.querySelector(".firstNameSymbol");
 firstSymbol.style.color = "transparent";
-firstNameInput.addEventListener("keyup", () => {
-	if (firstNameInput.value) {
+firstNameInput.addEventListener("keyup", () =>
+	styleFirstName(firstNameInput.value)
+);
+function styleFirstName(input) {
+	if (input) {
 		firstNameInput.style.borderStyle = "solid";
 		firstNameInput.style.borderColor = "#596d48";
 		firstSymbol.style.color = "green";
 	} else {
 		firstNameInput.style.borderStyle = "solid";
 		firstNameInput.style.borderColor = "#e5e7eb";
-		firstSymbol.style.color = "#FF033E";
 		firstNameInput.style.backgroundColor = " #FF7276";
+		firstSymbol.style.color = "#FF033E";
+
 		firstSymbol.textContent = "✖";
 	}
-	if (!firstNameInput.value) {
-		firstNameInput.style.borderStyle = "solid";
-		firstNameInput.style.borderColor = "red";
+}
+
+const lastNameInput = document.querySelector("#lname");
+const lastSymbol = document.querySelector(".lastNameSymbol");
+lastSymbol.style.color = "transparent";
+lastNameInput.addEventListener("keyup", () =>
+	styleLastName(lastNameInput.value)
+);
+function styleLastName(input) {
+	if (input) {
+		lastNameInput.style.borderStyle = "solid";
+		lastNameInput.style.borderColor = "#596d48";
+		lastSymbol.style.color = "green";
+	} else {
+		lastNameInput.style.borderStyle = "solid";
+		lastNameInput.style.borderColor = "#e5e7eb";
+		lastNameInput.style.backgroundColor = " #FF7276";
+		lastSymbol.style.color = "#FF033E";
+
+		lastSymbol.textContent = "✖";
 	}
-});
+}
+const email = document.querySelector("#email");
+const emailSymbol = document.querySelector(".emailSymbol");
+emailSymbol.style.color = "transparent";
+email.addEventListener("keyup", () => styleEmail(email.value));
+
+function styleEmail(input) {
+	const alphanumerical = /[^\W]|_/g;
+	if (input[input.length - 2] == "@") {
+		if (
+			input[input.length - 1].match(alphanumerical) ==
+			input[input.length - 1]
+		) {
+			email.style.borderStyle = "solid";
+			email.style.borderColor = "#596d48";
+			email.style.backgroundColor = "white";
+			emailSymbol.style.color = "green";
+			emailSymbol.textContent = "✓";
+		}
+	} else {
+		email.style.borderStyle = "solid";
+		email.style.borderColor = "#e5e7eb";
+		email.style.backgroundColor = " #FF7276";
+		emailSymbol.style.color = "#FF033E";
+
+		emailSymbol.textContent = "✖";
+	}
+}

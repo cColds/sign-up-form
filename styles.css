@@ -170,10 +170,6 @@ a:active {
 	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-.passwordRequirements > div:nth-child(-n + 4)::first-letter {
-	color: red;
-}
-
 .confirmPasswordContainer {
 	position: relative;
 	color: red;
@@ -185,11 +181,6 @@ a:active {
 	bottom: 10px;
 	margin-left: 60px;
 }
-
-/* input:invalid {
-	border-style: solid;
-	border-color: red;
-} */
 
 .showPassContainer {
 	display: flex;

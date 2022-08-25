@@ -41,17 +41,38 @@ function passwordMismatch(password, confirmPassword) {
 	}
 }
 const minimumCharInfo = document.querySelector(".min");
-const specialCharInfo = document.querySelector(".special");
-const upperCaseInfo = document.querySelector(".upperCase");
 const digitsInfo = document.querySelector(".digit");
+const upperCaseInfo = document.querySelector(".upperCase");
+const specialCharInfo = document.querySelector(".special");
 const incorrectPassword = document.querySelector(".mismatch");
-function isRequirementValid(info, passwordValue) {
+
+function initialRed() {
+	minimumCharInfo.style.color = "red";
+	digitsInfo.style.color = "red";
+	upperCaseInfo.style.color = "red";
+	specialCharInfo.style.color = "red";
+}
+initialRed();
+
+function isRequirementValid(info, passwordLength) {
 	const replaceX = info.replace("✖", "✓");
-	if (passwordValue >= 6 && passwordValue <= 32)
+	if (passwordLength >= 6 && passwordLength <= 32) {
 		minimumCharInfo.textContent = replaceX;
-	if (info.includes("digit")) digitsInfo.textContent = replaceX;
-	if (info.includes("uppercase")) upperCaseInfo.textContent = replaceX;
-	if (info.includes("special")) specialCharInfo.textContent = replaceX;
+		minimumCharInfo.style.color = "green";
+	}
+	if (info.includes("digit")) {
+		digitsInfo.textContent = replaceX;
+		digitsInfo.style.color = "green";
+	}
+	if (info.includes("uppercase")) {
+		upperCaseInfo.textContent = replaceX;
+		upperCaseInfo.style.color = "green";
+	}
+	if (info.includes("special")) {
+		specialCharInfo.textContent = replaceX;
+
+		specialCharInfo.style.color = "green";
+	}
 }
 
 function includesDigits(password) {
@@ -104,11 +125,3 @@ function showPassword() {
 		confirmPassword.type = "password";
 	}
 }
-// function error(password, confirmPassword) {
-// 	password.setAttribute("style", "border-style: solid; border-color: red;");
-
-// 	confirmPassword.setAttribute(
-// 		"style",
-// 		"border-style: solid; border-color: red;"
-// 	);
-// }

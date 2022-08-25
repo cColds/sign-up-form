@@ -1,13 +1,11 @@
 const password = document.querySelector("#passwordId");
 const confirmPassword = document.querySelector("#confirm-password");
 const submitButton = document.querySelector(".createAccount");
-
+submitButton.disabled = true;
 function checkPassword() {
 	const passwordResult = password.value;
 	const confirmPasswordResult = confirmPassword.value;
-
-	if (isPasswordValid(passwordResult, confirmPasswordResult))
-		console.log("TESTING");
+	isPasswordValid(passwordResult, confirmPasswordResult);
 }
 
 function isPasswordValid(password, confirmPassword) {
@@ -16,7 +14,6 @@ function isPasswordValid(password, confirmPassword) {
 	} else if (password === confirmPassword) {
 		incorrectPassword.textContent = "";
 	}
-
 	if (password.length >= 6 && password.length <= 32) {
 		isRequirementValid(minimumCharInfo.textContent, password.length);
 	} else {
@@ -40,6 +37,11 @@ function isPasswordValid(password, confirmPassword) {
 	} else {
 		specialCharInfo.style.color = "red";
 		specialCharInfo.textContent = "✖At least one special character";
+	}
+	if (allRequirementsMet()) {
+		submitButton.disabled = false;
+	} else {
+		submitButton.disabled = true;
 	}
 }
 
@@ -66,6 +68,19 @@ function initialRed() {
 	specialCharInfo.style.color = "red";
 }
 initialRed();
+
+function allRequirementsMet() {
+	if (minimumCharInfo.style.color == "green") {
+		if (digitsInfo.style.color == "green") {
+			if (upperCaseInfo.style.color == "green") {
+				if (specialCharInfo.style.color == "green") {
+					if (password.value === confirmPassword.value) return true;
+				}
+			}
+		}
+	}
+	return false;
+}
 
 function isRequirementValid(info, passwordLength) {
 	const replaceX = info.replace("✖", "✓");

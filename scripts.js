@@ -16,17 +16,30 @@ function isPasswordValid(password, confirmPassword) {
 	} else if (password === confirmPassword) {
 		incorrectPassword.textContent = "";
 	}
+
 	if (password.length >= 6 && password.length <= 32) {
 		isRequirementValid(minimumCharInfo.textContent, password.length);
+	} else {
+		minimumCharInfo.style.color = "red";
+		minimumCharInfo.textContent = "✖Minimum 6 characters";
 	}
 	if (includesDigits(password)) {
 		isRequirementValid(digitsInfo.textContent);
+	} else {
+		digitsInfo.style.color = "red";
+		digitsInfo.textContent = "✖At least one digit";
 	}
 	if (isUpperCase(password)) {
 		isRequirementValid(upperCaseInfo.textContent);
+	} else {
+		upperCaseInfo.style.color = "red";
+		upperCaseInfo.textContent = "✖At least one uppercase letter";
 	}
 	if (includesSpecialCharacters(password)) {
 		isRequirementValid(specialCharInfo.textContent);
+	} else {
+		specialCharInfo.style.color = "red";
+		specialCharInfo.textContent = "✖At least one special character";
 	}
 }
 

@@ -153,3 +153,24 @@ function showPassword() {
 		confirmPassword.type = "password";
 	}
 }
+
+const firstNameInput = document.querySelector("#fname");
+const firstSymbol = document.querySelector(".firstNameSymbol");
+firstSymbol.style.color = "transparent";
+firstNameInput.addEventListener("keyup", () => {
+	if (firstNameInput.value) {
+		firstNameInput.style.borderStyle = "solid";
+		firstNameInput.style.borderColor = "#596d48";
+		firstSymbol.style.color = "green";
+	} else {
+		firstNameInput.style.borderStyle = "solid";
+		firstNameInput.style.borderColor = "#e5e7eb";
+		firstSymbol.style.color = "#FF033E";
+		firstNameInput.style.backgroundColor = " #FF7276";
+		firstSymbol.textContent = "✖";
+	}
+	if (!firstNameInput.value) {
+		firstNameInput.style.borderStyle = "solid";
+		firstNameInput.style.borderColor = "red";
+	}
+});

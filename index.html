@@ -41,26 +41,32 @@
                             <div class="firstName">
                                 <p><label for="fname">FIRST NAME<span class="asterisk">*</span></label></p>
                                 <input type="text" id="fname" placeholder=" " required>
+                                <div class="firstNameSymbol">✓</div>
                             </div>
                             <div class="lastName">
-                                <p><label for="lname">LAST NAME<span class="asterisk"></span></label></p>
-                                <input type="text" id="lname">
+                                <p><label for="lname">LAST NAME<span class="asterisk">*</span></label></p>
+                                <input type="text" id="lname" required>
+                                <div class="secondNameSymbol">✓</div>
                             </div>
                         </div>
                         <div class="contactContainer">
                             <div class="emailAddress">
                                 <p> <label for="email">EMAIL<span class="asterisk">*</span></label></p>
                                 <input type="email" id="email" placeholder=" " required>
+                                <div class="emailSymbol">✓</div>
                             </div>
                             <div class="phoneNumber">
                                 <p> <label for="phone-number">PHONE NUMBER<span class="asterisk"></span></label></p>
-                                <input type="tel" id="phone-number">
+                                <input type="tel" id="phone-number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                                    placeholder="e.g 574-299-0141" title="Format: XXX,XXX,XXXX">
+                                <div class="phoneNumberSymbol">✓</div>
                             </div>
                         </div>
                         <div class="passwordContainer">
                             <div class="password">
                                 <p> <label for="password">PASSWORD<span class="asterisk">*</span></label></p>
                                 <input type="password" id="passwordId" placeholder=" " required>
+                                <div class="passwordSymbol">✓</div>
                                 <div class="showPassContainer">
                                     <label for="show">Show Password</label>
                                     <input type="checkbox" class="checkBox" id="show">
@@ -80,6 +86,7 @@
                                     <input type="password" id="confirm-password"
                                         title="At least 6 characters, a digit, an uppercase letter, and a special character"
                                         placeholder=" " required>
+                                    <div class="confirmPasswordSymbol">✓</div>
                                     <div class="mismatch"></div>
                                 </div>
 

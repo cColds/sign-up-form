@@ -161,11 +161,13 @@ function styleFirstName(input) {
 	if (input) {
 		firstNameInput.style.borderStyle = "solid";
 		firstNameInput.style.borderColor = "#596d48";
+		firstNameInput.style.backgroundColor = "white";
 		firstSymbol.style.color = "green";
+		firstSymbol.textContent = "✓";
 	} else {
 		firstNameInput.style.borderStyle = "solid";
 		firstNameInput.style.borderColor = "#e5e7eb";
-		firstNameInput.style.backgroundColor = " #FF7276";
+		firstNameInput.style.backgroundColor = "#FF7276";
 		firstSymbol.style.color = "#FF033E";
 
 		firstSymbol.textContent = "✖";
@@ -182,11 +184,13 @@ function styleLastName(input) {
 	if (input) {
 		lastNameInput.style.borderStyle = "solid";
 		lastNameInput.style.borderColor = "#596d48";
+		lastNameInput.style.backgroundColor = "white";
 		lastSymbol.style.color = "green";
+		lastSymbol.textContent = "✓";
 	} else {
 		lastNameInput.style.borderStyle = "solid";
 		lastNameInput.style.borderColor = "#e5e7eb";
-		lastNameInput.style.backgroundColor = " #FF7276";
+		lastNameInput.style.backgroundColor = "#FF7276";
 		lastSymbol.style.color = "#FF033E";
 
 		lastSymbol.textContent = "✖";

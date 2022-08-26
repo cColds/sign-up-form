@@ -215,7 +215,6 @@ a:active {
 .firstNameSymbol,
 .lastNameSymbol,
 .emailSymbol,
-.phoneNumberSymbol,
 .confirmPasswordSymbol {
 	position: absolute;
 	font-size: 2.2rem;
@@ -231,4 +230,17 @@ a:active {
 	color: green;
 	left: 325px;
 	bottom: 135px;
+}
+
+input[type="tel"]:invalid {
+	background-color: #ff7276;
+}
+.phoneNumberSymbol::before {
+	content: "✓";
+	position: absolute;
+	font-size: 2.2rem;
+	font-weight: bold;
+	color: green;
+	left: 325px;
+	bottom: 28px;
 }

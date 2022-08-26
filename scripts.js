@@ -257,9 +257,7 @@ function stylePassword() {
 const confirmPasswordInput = document.querySelector("#confirm-password");
 const confirmPasswordSymbol = document.querySelector(".confirmPasswordSymbol");
 confirmPasswordSymbol.style.color = "transparent";
-confirmPasswordInput.addEventListener("keyup", () =>
-	styleConfirmPassword(confirmPassword.value)
-);
+confirmPasswordInput.addEventListener("keyup", () => styleConfirmPassword());
 
 function styleConfirmPassword() {
 	if (allRequirementsMet()) {
@@ -277,5 +275,33 @@ function styleConfirmPassword() {
 		confirmPasswordSymbol.style.color = "#FF033E";
 
 		confirmPasswordSymbol.textContent = "✖";
+	}
+}
+
+const phoneNumber = document.querySelector("#phone-number");
+const phoneNumberSymbol = document.querySelector(".phoneNumberSymbol");
+phoneNumberSymbol.style.color = "transparent";
+phoneNumber.addEventListener("keyup", () =>
+	stylePhoneNumber(phoneNumber.value)
+);
+
+function stylePhoneNumber(input) {
+	const phoneNumberRegex =
+		/^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/;
+	if (input.match(phoneNumberRegex)) {
+		{
+			phoneNumber.style.borderStyle = "solid";
+			phoneNumber.style.borderColor = "#596d48";
+			phoneNumber.style.backgroundColor = "white";
+			phoneNumberSymbol.style.color = "green";
+			phoneNumberSymbol.textContent = "✓";
+		}
+	} else {
+		phoneNumber.style.borderStyle = "solid";
+		phoneNumber.style.borderColor = "#e5e7eb";
+		phoneNumber.style.backgroundColor = "#FF7276";
+		phoneNumberSymbol.style.color = "#FF033E";
+
+		phoneNumberSymbol.textContent = "✖";
 	}
 }

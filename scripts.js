@@ -39,10 +39,16 @@ function isPasswordValid(password, confirmPassword) {
 		specialCharInfo.textContent = "✖At least one special character";
 	}
 	if (allRequirementsMet()) {
-		if (password.value === confirmPassword.value)
+		if (
+			stylePhoneNumber(phoneNumber.value) &&
+			password.value === confirmPassword.value
+		) {
 			submitButton.disabled = false;
-	} else {
-		submitButton.disabled = true;
+		} else if (
+			!stylePhoneNumber(phoneNumber.value) &&
+			password.value !== confirmPassword.value
+		)
+			submitButton.disabled = true;
 	}
 }
 
@@ -71,6 +77,7 @@ function initialRed() {
 initialRed();
 
 function allRequirementsMet() {
+	console.log(phoneNumberSymbol.style.color);
 	if (minimumCharInfo.style.color == "green") {
 		if (digitsInfo.style.color == "green") {
 			if (upperCaseInfo.style.color == "green") {
@@ -148,6 +155,12 @@ function showPassword() {
 	} else {
 		password.type = "password";
 		confirmPassword.type = "password";
+		confirmPasswordInput.style.borderStyle = "solid";
+		confirmPasswordInput.style.borderColor = "#e5e7eb";
+		confirmPasswordInput.style.backgroundColor = "#FF7276";
+		confirmPasswordSymbol.style.color = "#FF033E";
+
+		confirmPasswordSymbol.textContent = "✖";
 	}
 }
 
@@ -241,13 +254,11 @@ passwordInput.addEventListener("keyup", () =>
 
 function stylePassword() {
 	if (allRequirementsMet()) {
-		{
-			passwordInput.style.borderStyle = "solid";
-			passwordInput.style.borderColor = "#596d48";
-			passwordInput.style.backgroundColor = "white";
-			passwordSymbol.style.color = "green";
-			passwordSymbol.textContent = "✓";
-		}
+		passwordInput.style.borderStyle = "solid";
+		passwordInput.style.borderColor = "#596d48";
+		passwordInput.style.backgroundColor = "white";
+		passwordSymbol.style.color = "green";
+		passwordSymbol.textContent = "✓";
 	} else {
 		passwordInput.style.borderStyle = "solid";
 		passwordInput.style.borderColor = "#e5e7eb";
@@ -264,14 +275,12 @@ confirmPasswordSymbol.style.color = "transparent";
 confirmPasswordInput.addEventListener("keyup", () => styleConfirmPassword());
 
 function styleConfirmPassword() {
-	if (allRequirementsMet()) {
-		{
-			confirmPasswordInput.style.borderStyle = "solid";
-			confirmPasswordInput.style.borderColor = "#596d48";
-			confirmPasswordInput.style.backgroundColor = "white";
-			confirmPasswordSymbol.style.color = "green";
-			confirmPasswordSymbol.textContent = "✓";
-		}
+	if (password.value === confirmPassword.value) {
+		confirmPasswordInput.style.borderStyle = "solid";
+		confirmPasswordInput.style.borderColor = "#596d48";
+		confirmPasswordInput.style.backgroundColor = "white";
+		confirmPasswordSymbol.style.color = "green";
+		confirmPasswordSymbol.textContent = "✓";
 	} else {
 		confirmPasswordInput.style.borderStyle = "solid";
 		confirmPasswordInput.style.borderColor = "#e5e7eb";
@@ -299,13 +308,21 @@ function stylePhoneNumber(input) {
 			phoneNumber.style.backgroundColor = "white";
 			phoneNumberSymbol.style.color = "green";
 			phoneNumberSymbol.textContent = "✓";
+			submitButton.disabled = false;
 		}
+	} else if (!input) {
+		phoneNumber.style.borderStyle = "solid";
+		phoneNumber.style.borderColor = "#e5e7eb";
+		phoneNumber.style.backgroundColor = "white";
+
+		submitButton.disabled = false;
+		phoneNumberSymbol.textContent = "";
 	} else {
 		phoneNumber.style.borderStyle = "solid";
 		phoneNumber.style.borderColor = "#e5e7eb";
 		phoneNumber.style.backgroundColor = "#FF7276";
 		phoneNumberSymbol.style.color = "#FF033E";
-
+		submitButton.disabled = true;
 		phoneNumberSymbol.textContent = "✖";
 	}
 }

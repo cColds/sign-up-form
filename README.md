@@ -1,7 +1,7 @@
 
 # Sign-up Form
 <div align='center'>
-	<h1>Calculator
+	<h1>Sign-up Form
 	<br>
 		<img src="https://img.shields.io/static/v1?label=&message=HTML&color=E34F26&style=for-the-badge&logo=HTML5&logoColor=white&logoWidth=&labelColor=&link=" alt="HTML Logo">
 		<img src="https://img.shields.io/static/v1?label=&message=CSS&color=1572B6&style=for-the-badge&logo=CSS3&logoColor=white&logoWidth=&labelColor=&link=" alt="CSS Logo">

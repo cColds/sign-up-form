@@ -9,6 +9,8 @@
 	<h3><b><a href="https://ccolds.github.io/admin-dashboard/">View Live Demo</a></b></h3>
 </div>
 
+![Admin Dashboard Preview](https://media.discordapp.net/attachments/249554120514600960/1053220224813518848/admin_dashboard_preview.png?width=778&height=513)
+
 # Features
 - Cards to my other projects
 
